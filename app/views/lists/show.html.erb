@@ -1,11 +1,10 @@
-<div class="card-category-smaller" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://openaircinema.blog/wp-content/uploads/2016/02/pop-up-cinema.jpg)">
+<div class="card-category-smaller" style="background-image: url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
   <%= @list.name %>
 </div>
 
 
-
 <div class="container mt-4">
-  <h4 class="my-4">You've got <%= @list.movies.count %> movies in your '<strong><%= @list.name %></strong>' list 🍿</h4>
+  <h4 class="my-4">You've got <%= pluralize(@list.movies.count, 'movie') %> in your '<strong><%= @list.name %></strong>' list 🍿</h4>
   <hr>
   <div class="row justify-content-center mt-3">
     <% @list.movies.each do |movie| %>

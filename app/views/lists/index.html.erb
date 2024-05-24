@@ -15,14 +15,14 @@
       <div class="col-lg-3 col-md-4 col-sm-6 mb-3 mt-1">
         <div class="card h-100 d-flex justify-content-center">
         <% if list.photo.attached? %>
-          <div class="card-body d-flex flex-column align-items-center" style="background-image: url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <div class="card-body d-flex flex-column align-items-center rounded" style="background-image: url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <% else %>
           <div class="card-body d-flex flex-column align-items-center">
         <% end %>
           <%= link_to list.name, list_path(list.id), class: 'm-2 text-decoration-none text-white', style: 'text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);' %>
             <div class="d-flex d-row">
-              <%= link_to 'Edit', edit_list_path(list), class: 'btn btn-sm btn-outline-warning m-2' %>
-              <%= link_to "Delete", list_path(list), class: 'btn btn-sm btn-outline-danger m-2', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+              <%= link_to 'Edit', edit_list_path(list), class: 'btn btn-sm btn-light m-2 rounded' %>
+              <%= link_to 'Delete', list_path(list), class: 'btn btn-sm btn-light m-2 rounded', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
             </div>
           </div>
         </div>
