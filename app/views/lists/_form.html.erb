@@ -1,0 +1,8 @@
+<%= simple_form_for list do |f| %>
+  <div class="input-group mb-3">
+    <%= f.input :name, input_html: { class: 'form-control' }, label: false, placeholder: 'Name of your new list' %>
+    <div class="input-group-append">
+      <%= f.button :submit, class: 'btn btn-outline-primary' %>
+    </div>
+  </div>
+<% end %>
