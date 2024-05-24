@@ -29,7 +29,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @list.update(list_params)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to list_path(@list)
+    redirect_to lists_path
   end
 
   def destroy
@@ -42,6 +42,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end

@@ -73,3 +73,4 @@ gem "sassc-rails"
 
 gem 'faker'
 gem "dotenv-rails"
+gem "cloudinary"
