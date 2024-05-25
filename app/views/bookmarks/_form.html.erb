@@ -1,4 +1,17 @@
 <%= simple_form_for [list, bookmark] do |f| %>
+
+  <% if @bookmark.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h4>
+
+      <ul>
+        <% @bookmark.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <%= f.association :movie %>
   <%= f.input :comment %>
   <%= f.button :submit, class: 'btn btn-outline-primary' %>
